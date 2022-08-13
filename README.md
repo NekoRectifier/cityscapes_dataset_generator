@@ -2,6 +2,13 @@
 
 ----
 
+## Before Using...
+
+- This tool can only create a simple cityscapes format dataset which consists two citys (`aachen` for train and `frankfurt` for validate)
+
+- All output files are named in the format like:  
+	`{city_name}_{num}_000019_{other_indictors}.{suffix}`
+
 ## Usage
 
 1. Split your annotation json and original pictures into 2 groups.  
@@ -14,8 +21,7 @@
 3. For each type of files in every folder, rename them from number `1`.  
     After renaming, the structure of the folder should be like:  
     
-   ```plaintext
-   
+   ```plain
     proj_root/
       |--- gen_dataset.py
       |--- raw_train
@@ -24,17 +30,14 @@
       |      |--- 2.json
       |      |--- 2.png
       |      |--- ...
-      |
       |--- raw_val
       |      |--- 1.json
       |      |--- 1.png
       |      |--- 2.json
       |      |--- 2.png
       |      |--- ...
-      |
       |--- requirements.txt
       |--- ...
-      
     ```
 
 4. run `gen_dataset.py`
