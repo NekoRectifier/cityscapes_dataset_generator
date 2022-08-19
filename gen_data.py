@@ -72,6 +72,9 @@ def _json_process(path, num):
                     obj.pop('shape_type')
 
                     obj['polygon'] = obj.pop('points')
+                    for point in obj['polygon']:
+                        point[0] = int(point[0])
+                        point[1] = int(point[1])
             except KeyError:
                 logger.error('Some keys in the json file has been modified, formatting operation stopped.')
                 return KeyError
@@ -179,3 +182,4 @@ if __name__ == "__main__":
     format_json()
     generate_img()
     batch_rename()
+    logger.info('Generating Completed!')
